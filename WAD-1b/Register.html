@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <title>Register</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</head>
+<body>
+<section>
+    <div class="register-form-box">
+        <div class="form-value">
+            <form action="#">
+                <h2 style="padding-top: 50px;"> Register</h2>
+                <!-- Username -->
+                <div class="inputbox">
+                    <iconify-icon icon="ion:person-circle-outline"></iconify-icon>
+                    <input type="username" required>
+                    <label for="">Username</label>
+                </div>
+                <!-- email-id -->
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <!-- Date of Birth -->
+                <div class="inputbox">
+                    <!-- <div class="date-container"> -->
+                        <iconify-icon class="date-icon" icon="mi:calendar"></iconify-icon>
+                        <input type="date" id="date" >
+                        <label for="DOB">Date of Birth</label> 
+                    <!-- </div> -->
+                </div>
+                <!-- Password -->
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <!-- Confirm password -->
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for="">Confirm Password</label>
+                </div>
+                <button>Sign up</button>
+                <div class="login">
+                    <p>Already have an account! <a href="#">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+    <script>
+    $(function() {
+        $('#date').datepicker({
+            dateFormat: 'dd-M-yy',
+            minDate: 1,
+            onSelect: function(){
+                $('date-container').addClass('date-selected');
+            }
+        });
+        
+        $('.date-icon').on('click', function() {
+            $('#date').focus();
+        })
+    });
+    </script>
+</body>
+</html>
